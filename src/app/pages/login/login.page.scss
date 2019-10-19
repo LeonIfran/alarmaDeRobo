@@ -1,0 +1,18 @@
+.background-card {
+    --background: var(--ion-color-primary-tint); //claro
+    --color: var(--ion-color-tertiary); //oscuro
+  }
+  
+  ion-card,
+  ion-card-title,
+  ion-label,
+  div {
+    --color: var(--ion-color-secondary-contrast) !important;
+    color: var(--ion-color-secondary-contrast);
+  }
+  
+  .img-logo {
+    height: 5rem;
+    width: auto;
+  }
+  

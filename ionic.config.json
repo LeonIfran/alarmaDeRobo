@@ -1,5 +1,7 @@
 {
   "name": "alarmaDeRobo",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

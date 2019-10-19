@@ -8,10 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
-// Forms
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 // Firebase
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
@@ -23,24 +19,26 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 // Popover page
 import { PopoverPageModule } from './pages/popover/popover.module';
 
+// Providers
+import { DeviceMotion } from '@ionic-native/device-motion/ngx';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { Flashlight } from '@ionic-native/flashlight/ngx';
+import { Vibration } from '@ionic-native/vibration/ngx';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, 
-    // Forms
-    FormsModule,
-    ReactiveFormsModule,
-    // Firebase
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
-    // Firebase Auth
-    AngularFireAuthModule,
-    // Popover
-    PopoverPageModule,],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule, ReactiveFormsModule, AngularFireModule.initializeApp(environment.firebaseConfig), AngularFirestoreModule, AngularFireAuthModule, PopoverPageModule],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    DeviceMotion,
+    NativeAudio,
+    Flashlight,
+    Vibration,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: FirestoreSettingsToken, useValue: {} },
   ],
   bootstrap: [AppComponent]
 })
