@@ -1,6 +1,20 @@
-<div *ngIf="showSplash" class="splash">
-<div class="spinner"></div>
-</div>
 <ion-app>
+    <div *ngIf="this.showSplash" class="splash">
+    <div class="spinner" [ngClass]="{
+      'spinner-landscape': this.platform.isLandscape(),
+      'spinner-portrait': !this.platform.isLandscape()
+      }"><img src="../assets/splash_solo_texto.png">
+    </div>
+<!--     <div class="ld ld-wander-v spinner" [ngClass]="{
+      'spinner-landscape': this.platform.isLandscape(),
+      'spinner-portrait': !this.platform.isLandscape()
+      }"><img src="../assets/splash_logo_lock.png">
+    </div> -->
+    <div class="ld ld-jingle spinner" [ngClass]="{
+      'spinner-landscape': this.platform.isLandscape(),
+      'spinner-portrait': !this.platform.isLandscape()
+      }"><img src="../assets/splashTransparente.png">
+    </div>
+  </div>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>
