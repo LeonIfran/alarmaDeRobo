@@ -126,7 +126,7 @@ export class LoginPage implements OnInit {
     }
 
     if (clave !== '') {
-      this.formGroup.patchValue({ correo: user + '@gmail.com', clave });
+      this.formGroup.patchValue({ correo: user + '@'+user+'.com', clave });
       this.formGroup.markAsDirty();
     }
   }

@@ -61,11 +61,11 @@
     </ion-card><!-- Fin de la carta #1 -->
     
     <ion-card class="transparent-item ion-padding">
-      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjaoscuro" expand="full">Admin</ion-button>
-      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjaclaro" expand="full">Usuario</ion-button>
-      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjablanco" expand="full">Invitado</ion-button>
-      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjaamarillo" expand="full">Tester</ion-button>
-      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="amarillo" expand="full">Anonimo</ion-button>
+      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjaoscuro" expand="full" (click)="rellenarCampos('admin')">Admin</ion-button>
+      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjaclaro" expand="full" (click)="rellenarCampos('usuario')">Usuario</ion-button>
+      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjablanco" expand="full" (click)="rellenarCampos('invitado')">Invitado</ion-button>
+      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjaamarillo" expand="full" (click)="rellenarCampos('tester')">Tester</ion-button>
+      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="amarillo" expand="full" (click)="rellenarCampos('anonimo')">Anonimo</ion-button>
     </ion-card>
     
     <ion-card>
