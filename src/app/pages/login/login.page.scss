@@ -23,3 +23,28 @@ ion-item {
 .ion-text-center {
     text-align: center;
   }
+
+.fondo {
+  --background: var(--ion-color-primary-shade);
+}
+
+.ion-activatable {
+  position: relative;
+  overflow: hidden;
+}
+
+.cartaTransparente {
+  --background: transparent;
+}
+
+.cardconteudo {
+  --background: var(--ion-color-primary-shade);
+  --color: var(--ion-color-primary-shade);
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}

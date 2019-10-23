@@ -1,29 +1,87 @@
-<ion-content color="primary">
-<ion-card color="naranjaamarillo"><!-- comienzo de la carta #1 -->
-  <ion-card-header>
-    <ion-card-title>Login</ion-card-title>
-  </ion-card-header>
-      <ion-item color="naranjablanco">
-        <ion-icon name="person" slot="start"></ion-icon>
-        <ion-label position="floating">E-mail</ion-label>
-        <ion-input type="email" inputmode="email" clearInput ></ion-input>
-    </ion-item>
-    <ion-item color="naranjablanco">
-        <ion-icon name="key" slot="start"></ion-icon>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="password" maxlength="6" clearInput ></ion-input>
-    </ion-item>
-    <!-- <ion-item color="naranjaamarillo"> -->
-      <ion-button expand="block" color="amarillo">Entrar</ion-button>
-      <ion-button expand="block">Cancelar</ion-button>
-    <!-- </ion-item> -->
+<ion-content class="fondo">
+    <ion-card color="primary" *ngIf="this.formGroup != undefined"><!-- comienzo de la carta #1 -->
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Login</ion-card-title>
+      </ion-card-header>
+     <!--  <ion-card-content *ngIf="this.formGroup != undefined"> --><!-- Inicio del content -->
+        <form [formGroup]="this.formGroup"><!-- comienzo del form -->
+          <ion-item color="naranjablanco">
+            <ion-icon name="person" slot="start"></ion-icon>
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input type="email" inputmode="email" clearInput formControlName="correo"></ion-input>
+            <div *ngIf="this.formGroup.controls.correo.touched ==
+            true &&
+            this.formGroup.controls.correo.errors != undefined">
+            <div
+              *ngIf="this.formGroup.controls.correo.errors.required
+              !=
+              undefined">
+              El correo es requerido
+            </div>
+            <div
+              *ngIf="this.formGroup.controls.correo.errors.email
+              !=
+              undefined">
+              El correo no tiene el formato correcto
+            </div>
+          </div>
+        </ion-item>
+        <ion-item color="naranjablanco">
+            <ion-icon name="key" slot="start"></ion-icon>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input type="password" maxlength="6" clearInput formControlName="clave"></ion-input>
+            <div *ngIf="this.formGroup.controls.clave.touched ==
+            true &&
+            this.formGroup.controls.clave.errors != undefined">
+            <div
+              *ngIf="this.formGroup.controls.clave.errors.required
+              != undefined">La clave es requerida
+            </div>
+            <div
+              *ngIf="this.formGroup.controls.clave.errors.minlength
+              != undefined">La clave no debe ser de menos de 6 carácteres
+            </div>
+          </div>
+        </ion-item>
+        
+          <ion-button expand="block" fill="clear" color="negro" class="ion-activatable" [disabled]="!this.formGroup.valid"
+          (click)="iniciarSesion()">Entrar
+          </ion-button>
+          <ion-item class="transparent-item"
+          *ngIf="this.formGroup.pristine == true &&
+          this._errorMessage != ''">
+          <!-- Pristine {{this.formGroup.pristine}}<br>
+                    Error {{this._errorMessage}} -->
+          <ion-label class="ion-text-center">
+            ¡Error! {{this._errorMessage}}
+          </ion-label>
+        </ion-item>
+        </form>
+    <!--   </ion-card-content> -->
+    </ion-card><!-- Fin de la carta #1 -->
     
-</ion-card><!-- Fin de la carta #1 -->
-<ion-card  button="true" type="button" >
-<ion-item color="naranjablanco" class="text-center">
-      <ion-label class="ion-text-center">Admin</ion-label>
-
-</ion-item>
-
-</ion-card>
-</ion-content>
+    <ion-card class="transparent-item ion-padding">
+      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjaoscuro" expand="full">Admin</ion-button>
+      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjaclaro" expand="full">Usuario</ion-button>
+      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjablanco" expand="full">Invitado</ion-button>
+      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="naranjaamarillo" expand="full">Tester</ion-button>
+      <ion-button class="ion-padding" shape="round" size="large" strong="true" color="amarillo" expand="full">Anonimo</ion-button>
+    </ion-card>
+    
+    
+    <ion-item  class="transparent-item">
+        <img src="../../../assets/graficos/alarma_small.png">
+    </ion-item>
+    <!-- <ion-item  class="transparent-item"> 
+        <h6 class="ion-text-center">
+          Alarma anti robo todos los derechos reservados ISL S.R.L 
+          Por consultas contactarse a AlarmaAntirobo@ISL.com
+          Para soporte visite nuestro sitio web www.ISLSoluciones.com/Alarma/soporte
+        </h6>
+    </ion-item> -->
+    <ion-card>
+        <ion-card-content>
+            Alarma anti robo todos los derechos reservados ISL S.R.L. Por consultas contactarse a AlarmaAntirobo@ISL.com Para soporte visite nuestro sitio web: www.ISLSoluciones.com/Alarma/soporte
+        </ion-card-content>
+    </ion-card>
+    </ion-content>
