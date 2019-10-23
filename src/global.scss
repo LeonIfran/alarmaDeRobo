@@ -126,11 +126,11 @@
     --background: transparent;
   }
   
-/*   .spinner-class {
+   .spinner-class {
     --background: #ffffff;
   
     .loading-wrapper {
-      background-image: url("./assets/splash_logo.png"), radial-gradient(circle, #2f4858 0%, #2f4858 100%);
+      background-image: url("./assets/splashTransparente.png"), radial-gradient(circle, #ffbf80 10%, #ff9933 100%);
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -140,7 +140,7 @@
       -webkit-box-shadow: none;
     }
   }
-   */
+   
   .flex {
     &-v {
       display: flex;
