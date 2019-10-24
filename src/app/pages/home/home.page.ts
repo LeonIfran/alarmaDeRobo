@@ -113,18 +113,18 @@ export class HomePage implements OnInit {
           if (acceleration.x > 8.0) {
             if (this._izquierda === true) {
               this._izquierda = false;
-              this._smartServ.reproducirAudio('izquierda', 1);
+              this._smartServ.reproducirAudio('izquierda', 2);
               setTimeout(() => {
                 this._derecha = true;
-              }, 1000);
+              }, 2000);
             }
           } else if (acceleration.x < -8.0) {
             if (this._derecha === true) {
               this._derecha = false;
-              this._smartServ.reproducirAudio('derecha', 1);
+              this._smartServ.reproducirAudio('derecha', 3);
               setTimeout(() => {
                 this._izquierda = true;
-              }, 1000);
+              }, 3000);
             }
           } else if (acceleration.x > -3.0 && acceleration.x < 3.0 && acceleration.y > 8.5) {
             if (this._vertical === true) {
