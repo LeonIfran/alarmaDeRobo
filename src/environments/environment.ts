@@ -5,13 +5,13 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyA7FUJrvXrxzJPaaNiLDqYyF1ecLd7pgfc",
-    authDomain: "visualizador-fce65.firebaseapp.com",
-    databaseURL: "https://visualizador-fce65.firebaseio.com",
-    projectId: "visualizador-fce65",
-    storageBucket: "visualizador-fce65.appspot.com",
-    messagingSenderId: "166435035999",
-    appId: "1:166435035999:web:27f0d6593a0d7844c434ea"  
+    apiKey: "AIzaSyCn3-hjqCT6YueP2gn92PCl2YE5zqkIxuw",
+    authDomain: "alarma-6a184.firebaseapp.com",
+    databaseURL: "https://alarma-6a184.firebaseio.com",
+    projectId: "alarma-6a184",
+    storageBucket: "alarma-6a184.appspot.com",
+    messagingSenderId: "502107140959",
+    appId: "1:502107140959:web:2a7deae829d86c32d1fcea"
   }
 };
 

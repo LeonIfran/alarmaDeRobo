@@ -60,6 +60,10 @@ export class HomePage implements OnInit {
     this._spinnerServ.hideSpinner();
   }
 
+  public obtenerNombre()
+  {
+    return this._authServ.username;
+  }
   public async cerrarSesion() {
     this._spinnerServ.showSpinner();
     if (this._active) {

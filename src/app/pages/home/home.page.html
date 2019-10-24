@@ -1,14 +1,28 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-        <ion-buttons slot="end">
+<ion-header no-border>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
       <ion-button fill="outline" (click)="this.cerrarSesion()" shape="round"
-        color="verdecito" [disabled]="this._active">
+        color="rojosirena" [disabled]="this._active">
         <ion-icon slot="icon-only" name="power"></ion-icon></ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content color="primary">
+  <div class="width-100 height-90 center-vertical center-horizontal">
+    <button class="alarm square-button flex-v center-vertical
+      center-horizontal"
+      [ngClass]="{'alarm-act': !this._active, 'alarm-deact': this._active }"
+      (click)="activarAlarma()">
+      <img [src]="this._sourceImg" class="img-button">
+      <div class="width-100">{{ this._message | titlecase }}</div>
+    </button>
+  </div>
 </ion-content>
+
+<ion-footer no-border>
+  <ion-toolbar color="primary">
+   <!--  Hello there. -->
+   <!-- Usuario actual:  -->
+  </ion-toolbar>
+</ion-footer>
